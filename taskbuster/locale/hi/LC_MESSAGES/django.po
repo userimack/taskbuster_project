@@ -28,12 +28,11 @@ msgstr ""
 
 #: taskbuster/templates/taskbuster/index.html:10
 msgid "Welcome to TaskBuster!"
-msgstr "TaskBuster me aapka Swagat hain!"
+msgstr "TaskBuster करने के लिए आपका स्वागत है!"
 
 #: taskbuster/templates/taskbuster/index.html:11
 msgid ""
 "TaskBuster is a simple Task manager that helps you organize your daylife. </"
-"br> You can create todo lists, periodic tasks and more! </br></br> If you "
-"want to learn how it was created, or create it yourself!, check www.django-"
-"tutorial.com"
-msgstr "zzzzzz"
+"br> You can create todo lists, periodic tasks and more! "
+msgstr "TaskBuster आप अपने Daylife को संगठित करने में मदद करता है कि एक साधारण कार्य प्रबंधक है । </"
+"br> आप टूडू सूची, समय-समय पर कार्य और अधिक बना सकते हैं!"

@@ -37,6 +37,8 @@ class TestGoogleLogin(StaticLiveServerTestCase):
         import json
         with open("taskbuster/fixtures/google_user.json") as f:
             credentials = json.loads(f.read())
+        email = credentials['Email']
+        passw = credentials['Passwd']
         self.get_element_by_id("Email").send_keys(credentials["Email"])
         self.get_button_by_id("next").click()
         self.get_element_by_id("Passwd").send_keys(credentials["Passwd"])
