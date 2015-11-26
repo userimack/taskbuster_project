@@ -55,7 +55,7 @@ class TestGoogleLogin(StaticLiveServerTestCase):
             self.get_element_by_id("logout")
         self.assertEqual(
             google_login.get_attribute("href"),
-            self.live_server_url + "en/accounts/google/login")
+            self.live_server_url + "/accounts/google/login")
         google_login.click()
         with self.assertRaises(TimeoutException):
             self.get_element_by_id("google_login")
