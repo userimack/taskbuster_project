@@ -44,6 +44,8 @@ class TestGoogleLogin(StaticLiveServerTestCase):
         self.get_element_by_id("Passwd").send_keys(credentials["Passwd"])
         for btn in ["signIn", "submit_approve_access"]:
             self.get_button_by_id(btn).click()
+        for btn in ["allow"]:
+            self.get_button_by_id(btn).click()
         return
  
     def test_google_login(self):
