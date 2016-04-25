@@ -28,8 +28,11 @@ def get_env_variable(var_name):
         error_msg = "Set the %s environment variable" % var_name
         raise ImproperlyConfigured(error_msg)
 
-SECRET_KEY = get_env_variable('SECRET_KEY')
-# SECURITY WARNING: don't run with debug turned on in production!
+try :
+    SECRET_KEY = get_env_variable('SECRET_KEY')
+    # SECURITY WARNING: don't run with debug turned on in production!
+except :
+    SECRET_KEY = "n%%h55t@^^w!m9n181rwuu57r-*!iy%q%5h&xy-(ekd0s9zm1g"
 
 
 ALLOWED_HOSTS = ['*']
@@ -101,7 +104,7 @@ WSGI_APPLICATION = 'taskbuster.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'base_db.sqlite3'),
     }
 }
 
