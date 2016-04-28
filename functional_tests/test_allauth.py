@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import  expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+import time
 
 from django.core.urlresolvers import reverse
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
@@ -15,7 +16,7 @@ class TestGoogleLogin(StaticLiveServerTestCase):
  
     def setUp(self):
         self.browser = webdriver.Firefox()
-        self.browser.implicitly_wait(3)
+        self.browser.implicitly_wait(10)
         self.browser.wait = WebDriverWait(self.browser, 10)
         activate('en')
  
@@ -53,6 +54,7 @@ class TestGoogleLogin(StaticLiveServerTestCase):
         google_login = self.get_element_by_id("google_login")
         google_login.click()
         self.user_login()
+        time.sleep(15)
         with self.assertRaises(TimeoutException):
             self.get_element_by_id("logout")
         self.assertEqual(
@@ -63,7 +65,7 @@ class TestGoogleLogin(StaticLiveServerTestCase):
             self.get_element_by_id("google_login")
         google_logout = self.get_element_by_id("logout")
         google_logout.click()
-        google_login = self.get_element_by_id("google_login")
+        #google_login = self.get_element_by_id("google_login")
 
 
 class TestTwitterLogin(StaticLiveServerTestCase):
