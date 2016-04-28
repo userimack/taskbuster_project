@@ -11,7 +11,7 @@ from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.utils.translation import activate
 
 
-class TestGoogleLogin(StaticLiveServerTestCase):
+# class TestGoogleLogin(StaticLiveServerTestCase):
     fixtures = ['allauth_fixture']
  
     def setUp(self):
